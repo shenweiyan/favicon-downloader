@@ -39,7 +39,7 @@ export async function GET(request: NextRequest, { params: { domain } }: { params
 
 
   if (larger) {
-    const duckduckgoUrl = `https://icons.duckduckgo.com/ip3/${asciiDomain}.ico`;
+    const duckduckgoUrl = `https://icons.duckduckgoxxx.com/ip3/${asciiDomain}.ico`;
     console.log("Ico source:", duckduckgoUrl);
     try {
       const response = await fetch(duckduckgoUrl, {

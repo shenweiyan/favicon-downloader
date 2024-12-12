@@ -47,8 +47,8 @@ export async function GET(request: NextRequest, { params }: { params: { domain: 
 
   // Try alternative sources
   const sources = [
-    `https://icons.duckduckgo.com/ip3/${encodeURIComponent(domain)}.ico`,
-    `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=100`,
+    `https://icons.duckduckgoxxx.com/ip3/${encodeURIComponent(domain)}.ico`,
+    `https://www.googlexxx.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=100`,
   ];
 
   const icons: { href: string; sizes?: string; }[] = [];
