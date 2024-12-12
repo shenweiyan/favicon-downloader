@@ -16,7 +16,7 @@ export const getFavicons = async ({ url, headers }: { url: string, headers?: Hea
     const responseUrl = new URL(response.url);
 
     // Regex to match <link> tags with "rel" containing "icon"
-    const regex = /<link[^>]*rel=['"][^'"]*icon[^'"]*['"][^>]*>/gi;
+    const regex = /<link[^>]*rel=['"]?[^\s]*icon['"]?[^>]*?>/gi;
     const matches = Array.from(body.matchAll(regex));
     const icons: { sizes: string, href: string }[] = [];
 
@@ -24,11 +24,11 @@ export const getFavicons = async ({ url, headers }: { url: string, headers?: Hea
       const linkTag = match[0];
 
       // Extract href value
-      const hrefMatch = linkTag.match(/href=['"](.*?)['"]/i);
+      const hrefMatch = linkTag.match(/href=['"]?([^\s>'"]*)['"]?/i);
       const href = hrefMatch ? hrefMatch[1] : null;
 
       // Extract sizes value
-      const sizesMatch = linkTag.match(/sizes=['"](.*?)['"]/i);
+      const sizesMatch = linkTag.match(/sizes=['"]?([^\s>'"]*)['"]?/i);
       const sizes = sizesMatch ? sizesMatch[1] : null;
 
       if (href) {
