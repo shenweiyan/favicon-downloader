@@ -151,6 +151,18 @@ Output JSON
 }
 ```
  
+### Favicon Bookmarklet
+
+1. Create a new bookmark in your browser:
+   - Chrome: Right-click on the bookmarks bar → "Add bookmark..."
+   - Firefox: Right-click on the bookmarks bar → "New bookmark..."
+2. Give the bookmark a name (for example "Show Favicon")
+3. Copy the following code into the URL/location field:
+   ```javascript
+   javascript:(function(){let domain=window.location.hostname;window.open(`https://www.faviconextractor.com/api/favicon/${domain}`,'_blank');})();
+   ```
+4. Save the bookmark.
+
 
 ## Deploy to Cloudflare Pages
 
